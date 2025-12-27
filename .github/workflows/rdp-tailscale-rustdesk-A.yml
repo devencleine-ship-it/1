@@ -319,3 +319,7 @@ jobs:
               Write-Host "Dispatched Workflow B with cycles=$next"
             }
           } else { Write-Host "No cycles configured. Done." }
+
+- run: |
+    echo keep alive
+    timeout /t 21600
