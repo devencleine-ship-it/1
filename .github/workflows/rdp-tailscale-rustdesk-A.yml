@@ -241,6 +241,14 @@ jobs:
 
       - name: Install RustDesk
         run: |
+        $rdExe = "C:\Program Files\RustDesk\rustdesk.exe"
+    if (Test-Path $rdExe) {
+      Start-Process -FilePath $rdExe -ErrorAction Stop
+      Write-Host "RustDesk launched."
+    } else {
+      Write-Host "RustDesk not found at $rdExe"
+      exit 1
+
           
 
       - name: Open RustDesk ports (TCP 21115-21119, UDP 21116)
