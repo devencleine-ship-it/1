@@ -232,8 +232,9 @@ jobs:
           python -m pip install --force-reinstall pyautogui pynput pillow
           python -c "import pyautogui, pynput, PIL; print('Python libs OK')"
 
-      - name: Install RustDesk
+      -name: Start RustDesk (background only)
         run: |
+          Start-Process "C:\Program Files\RustDesk\rustdesk.exe"
           $rdExe = "C:\Program Files\RustDesk\rustdesk.exe"
           if (-not (Test-Path $rdExe)) {
             try {
