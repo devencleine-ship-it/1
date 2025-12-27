@@ -269,7 +269,8 @@ jobs:
           netsh advfirewall firewall add rule name=$udpName dir=in action=allow protocol=UDP localport=21116
 
       - name: Launch RustDesk (foreground) + Screenshot to Gofile
-        run: |
+        if: false
+        run:
           $rdExe = "C:\Program Files\RustDesk\rustdesk.exe"
           Start-Process -FilePath $rdExe -ErrorAction SilentlyContinue
           Start-Sleep -Seconds 5
